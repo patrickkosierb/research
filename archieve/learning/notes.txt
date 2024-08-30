@@ -1,0 +1,3 @@
+- how to implement U vector into training cylce
+- how many epoch until 90% convergence
+- is it worth it to use more than 10 training points? Why only 10 for the simple example? 
