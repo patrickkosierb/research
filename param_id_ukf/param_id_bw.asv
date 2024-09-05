@@ -52,6 +52,8 @@ for k = 1:length(t)-1
     z_lls(k+1) = z_lls(k)+(-gamma*abs(xdot(k))*z_lls(k)*abs(z_lls(k))^(n_po-1)-beta*xdot(k)*abs(z_lls(k))^n_po+A*xdot(k))*T;
     f_lls(k) = c*xdot(k)+k*(xdot(k)-x0)+alpha*z_lls(k);
 end
+figure;
+plot(t,f_lls);
 
 % state func.
 f = @(x,u)[
@@ -64,7 +66,7 @@ h = @(x,u)[
     x(2)*u(2)+x(3)*(u(1)-x0)+alpha*x(1); % force
 ];
 
-n_iter = length(t);
+n_iter = length(t)
 
 Q = 1e-7*eye(n); 
 R = 1e-4*eye(m); 
@@ -75,24 +77,17 @@ x_est(:,1) = [0.1,1,1];
 
 in = [x,xdot];
 
-% ukf loop
+% ukf
+
 for k = 1:n_iter-1
     [x_est(:,k+1), P_ukf] = ukf(x_est(:,k), f_measured(k), in(k,:), P_ukf, f, h, Q, R);
 end
 
+
 figure;
 tiledlayout(3,1)
 nexttile;
-plot(t,x_est(1,1:n_iter));
-nexttile;
-plot(t,x_est(2,1:n_iter));
-nexttile;
-plot(t,x_est(3,1:n_iter));
-
-figure;
-plot(t,f_measured);
-hold on;
-plot(t,f_lls);
+plot(t,x(1,n_iter));
 
 
 

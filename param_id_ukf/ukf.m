@@ -1,5 +1,5 @@
 %% UKF function (see slide #15 on L08 for summary equations)
-function [x, P] = ukf_input(x, z, u, P, xNon, yNon, Q, R)
+function [x, P] = ukf(x, z, u, P, xNon, yNon, Q, R)
 
 % a) Initialize Stage
 n = size(x,1); % Defines number of states
