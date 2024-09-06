@@ -1,5 +1,5 @@
 clc;close all;clear
-
+addpath("C:\Users\pk\Documents\code\research\data");
 % pre-processing
 data = readtable('data_voltagevarying.csv');
 t = data(:,1);
