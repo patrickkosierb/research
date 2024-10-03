@@ -1,32 +1,15 @@
 clc;close all;clear;
 
-addpath("C:\Users\pk\Documents\code\research\data");
 addpath("C:\Users\pk\Documents\code\research\general");
-
-% pre-processing
-data = readtable('data_voltagevarying.csv');
-t = data(:,1);
-t = t{:,:};
-x = data(:,2);
-x = x{:,:};
-xdot = data(:,3);
-xdot = xdot{:,:};
-voltage = data(:,4);
-voltage = voltage{:,:};
-f_measured = data(:,5);
-f_measured= f_measured{:,:};
-
-% filtering noisey velocity
-order = 3;
-framelen = 11;
-xdot = sgolayfilt(xdot,order,framelen);
 
 % num. of states & measurement + sampling time
 n = 2;
 m = 1;
 T = 0.0147;
 
-% 'true' parameters from nlls
+tspan = 0:T:5;
+
+% true param 
 n_po = 2;
 c = 5735.324123113438;
 k = 222.1732327530771;
@@ -35,6 +18,16 @@ beta = 1519.1475673855064;
 gamma = 1485.0310631782363;
 A = -0.15334767682272726;
 x0 = -0.0029967590221754714;
+
+
+
+
+
+
+
+
+
+
 
 % state func.
 f = @(x,u)[
