@@ -1,10 +1,10 @@
-%% UKF function (see slide #15 on L08 for summary equations)
-function [x, P] = ukf(x, z, u, P, xNon, yNon, Q, R)
+%% UKF function
+function [x, P] = ukf_gad(x, z, u, P, xNon, yNon, Q, R)
 
 % a) Initialize Stage
 n = size(x,1); % Defines number of states
 m = size(z,1); % Defines number of measurements
-kappa = 1; % Defines kappa value (user defined)
+kappa = 0.5; % Defines kappa value (user defined) tests: 1
 sqrtnkp = sqrtm((n+kappa)*P); % Calculates the square root of (n+kappa)*P
 X = zeros(n,2*n+1); % Initializes sigma points to zero
 W = zeros(1,2*n+1); % Initializes weights to zero for each sigma point
