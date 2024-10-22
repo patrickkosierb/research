@@ -31,7 +31,8 @@ for q = 1:n_points
 end
 
 % plot the workspace
-scatter3(workspace(:,1), workspace(:,2), workspace(:,3), '.');
+plot3(workspace(:,1), workspace(:,2), workspace(:,3));
+% scatter3(workspace(:,1), workspace(:,2), workspace(:,3), '.');
 xlabel('X');
 ylabel('Y');
 zlabel('Z');

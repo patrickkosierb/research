@@ -1,6 +1,7 @@
 %% run find_workspace.m if robots workspace isn't defined yet %%
 clc; close all; 
 
+
 % test trajectory from robot workspace
 t_span = linspace(0,10,25);
 traj1 = [workspace(6900:6924,1)'; workspace(6900:6924,2)'; workspace(6900:6924,3)'];
@@ -27,6 +28,7 @@ grid on;
 % wp2 = [1,1,1;1,1,1;1,1,1];
 % wp3 = [2,2,2;2.5,2.5,2.5;0,0,0];
 % wp4 = [2,3,2.5;1,1,1;0,1,2];
+wp_rand = traj1(1:3,15);
 
 % size(traj1)
 % size(fwd)
