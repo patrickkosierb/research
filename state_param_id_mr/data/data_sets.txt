@@ -1,0 +1,7 @@
+
+trial 1: data_voltagevarying (1cm/s) index: 39418:end	
+
+trial 2: v350000_a150_121mv_clean (4cm/s)
+
+trial 3: v250000_a50_121mv2_clean (2cm/s)
+

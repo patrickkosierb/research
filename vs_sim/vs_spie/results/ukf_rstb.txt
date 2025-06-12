@@ -1,0 +1,20 @@
+norm =
+
+    1.1602
+
+
+rmsetau =
+
+    0.2992
+
+
+rmseq =
+
+   13.3284
+
+
+rmseqd =
+
+   20.5732
+
+Elapsed time is 254.553431 seconds.
